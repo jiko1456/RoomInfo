@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">RoomInfo</string>
+    <string name="app_name">Capstone</string>
+    <string name="title01">1_진리관</string>
+    <string name="title02">2_성신관</string>
+    <string name="title03">3_애경관</string>
+    <string name="title04">4_예지관</string>
+    <string name="title05">5_덕문관</string>
+    <string name="title06">6_광교관</string>
+    <string name="title07">7_집현관</string>
+    <string name="title08">8_육영관</string>
+    <string name="title09">9_호연관</string>
+    <string name="title10">종합강의동</string>
 </resources>

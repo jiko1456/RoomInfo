@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class RoomInfo_1 extends AppCompatActivity {
+public class RoomInfo_2 extends AppCompatActivity {
 
     TextView cancelBtn, naviBtn;
     ImageButton res, bus, lec, etc, favor;
@@ -22,7 +22,7 @@ public class RoomInfo_1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.lectureroom_1);
+        //setContentView(R.layout.lectureroom_2);
 
         Window win = getWindow();
         win.setContentView(R.layout.activity_main);
@@ -30,7 +30,7 @@ public class RoomInfo_1 extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater)getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
 
-        LinearLayout linear = (LinearLayout) inflater.inflate(R.layout.lectureroom_1, null);
+        LinearLayout linear = (LinearLayout) inflater.inflate(R.layout.lectureroom_2, null);
         linear.setBackgroundColor(Color.parseColor("#00ff0000"));
         linear.setGravity(Gravity.CENTER);
         linear.setPadding(5,100,5,40);
