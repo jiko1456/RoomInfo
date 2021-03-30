@@ -61,12 +61,12 @@ public class RoomInfo_8 extends AppCompatActivity {
         // 리스트뷰 구현.
         roomInfo_content = (ListView) findViewById(R.id.roominfo_content);
         RoomInfoAdapter adapter = new RoomInfoAdapter();
-        adapter.addItem(new RoomInfoItem("B1 층"));
-        adapter.addItem(new RoomInfoItem("1 층"));
-        adapter.addItem(new RoomInfoItem("2 층"));
-        adapter.addItem(new RoomInfoItem("3 층"));
-        adapter.addItem(new RoomInfoItem("4 층"));
-        adapter.addItem(new RoomInfoItem("5 층"));
+        adapter.addItem(new RoomInfoItem("B1F", R.drawable.toilet, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
+        adapter.addItem(new RoomInfoItem("1F", R.drawable.woman, R.drawable.printer, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
+        adapter.addItem(new RoomInfoItem("2F", R.drawable.man, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
+        adapter.addItem(new RoomInfoItem("3F", R.drawable.woman, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
+        adapter.addItem(new RoomInfoItem("4F", R.drawable.man, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
+        adapter.addItem(new RoomInfoItem("5F", R.drawable.woman, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
         roomInfo_content.setAdapter(adapter);
 
 
@@ -166,6 +166,11 @@ public class RoomInfo_8 extends AppCompatActivity {
             }
             RoomInfoItem item = items.get(position);
             roomInfoItemView.setFloor(item.getFloor());
+            roomInfoItemView.setFloorPic1(item.getFloorPic1());
+            roomInfoItemView.setFloorPic2(item.getFloorPic2());
+            roomInfoItemView.setFloorPic3(item.getFloorPic3());
+            roomInfoItemView.setFloorPic4(item.getFloorPic4());
+            roomInfoItemView.setFloorPic5(item.getFloorPic5());
             return roomInfoItemView;
         }
     }
