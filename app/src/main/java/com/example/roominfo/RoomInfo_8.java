@@ -9,21 +9,29 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RoomInfo_8 extends AppCompatActivity {
 
     TextView cancelBtn, naviBtn;
     ImageButton res, bus, lec, etc, favor;
+    ListView roomInfo_content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.lectureroom_8);
 
+        // 메인화면 뒷배경 넣기.
         Window win = getWindow();
         win.setContentView(R.layout.activity_main);
 
@@ -49,6 +57,19 @@ public class RoomInfo_8 extends AppCompatActivity {
         lec = (ImageButton) findViewById(R.id.lec);
         etc = (ImageButton) findViewById(R.id.etc);
         favor = (ImageButton) findViewById(R.id.favor);
+
+        // 리스트뷰 구현.
+        roomInfo_content = (ListView) findViewById(R.id.roominfo_content);
+        RoomInfoAdapter adapter = new RoomInfoAdapter();
+        adapter.addItem(new RoomInfoItem("B1 층"));
+        adapter.addItem(new RoomInfoItem("1 층"));
+        adapter.addItem(new RoomInfoItem("2 층"));
+        adapter.addItem(new RoomInfoItem("3 층"));
+        adapter.addItem(new RoomInfoItem("4 층"));
+        adapter.addItem(new RoomInfoItem("5 층"));
+        roomInfo_content.setAdapter(adapter);
+
+
 
         // 취소, 길 안내 버튼.
         cancelBtn.setOnClickListener(new View.OnClickListener() {
@@ -112,5 +133,40 @@ public class RoomInfo_8 extends AppCompatActivity {
         super.onBackPressed();
         Intent intent = new Intent(getApplicationContext(), LectureRoom.class);
         startActivity(intent);
+    }
+
+    //리스트뷰 어댑터 구현.
+    class RoomInfoAdapter extends BaseAdapter {
+        ArrayList<RoomInfoItem> items = new ArrayList<RoomInfoItem>();
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+        public void addItem(RoomInfoItem item) {
+            items.add(item);
+        }
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            RoomInfoItemView roomInfoItemView = null;
+            if(convertView == null) {
+                roomInfoItemView = new RoomInfoItemView(getApplicationContext());
+            }
+            else {
+                roomInfoItemView = (RoomInfoItemView) convertView;
+            }
+            RoomInfoItem item = items.get(position);
+            roomInfoItemView.setFloor(item.getFloor());
+            return roomInfoItemView;
+        }
     }
 }
