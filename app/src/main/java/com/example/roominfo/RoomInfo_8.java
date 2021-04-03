@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -68,6 +69,19 @@ public class RoomInfo_8 extends AppCompatActivity {
         adapter.addItem(new RoomInfoItem("4F", R.drawable.man, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
         adapter.addItem(new RoomInfoItem("5F", R.drawable.woman, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent, R.drawable.transparent));
         roomInfo_content.setAdapter(adapter);
+
+        // 리스트뷰 클릭.
+        roomInfo_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 각 리스트에 대한 층 수 값 저장.
+                String floor = ((RoomInfoItem)adapter.getItem(position)).getFloor();
+
+                Intent intent = new Intent(getApplicationContext(), RoomInfoPop_8.class);
+                intent.putExtra("floor", floor);
+                startActivity(intent);
+            }
+        });
 
 
 
