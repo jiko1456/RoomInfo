@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RoomInfo">
-        <activity android:name=".RoomInfoPop_8"
+        <activity android:name=".RoomInfoPop"
             android:theme="@style/Theme.MyDialog"/>
         <activity android:name=".RoomInfo_10" />
         <activity android:name=".RoomInfo_9" />

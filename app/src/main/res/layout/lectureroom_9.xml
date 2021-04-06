@@ -29,19 +29,15 @@
             android:background="@drawable/title_info"/>
 
         // 목적지에 대한 정보.
-        <TextView
-            android:layout_width="wrap_content"
+        <ListView
+            android:id="@+id/roominfo_content"
             android:layout_height="230dp"
-            android:text=
-                "- 3층 -\n관광개발 디자인 실습실\n관광대학 세미나실\n4pc실\n\n- 4층 -\n이벤트 전공 강의실\n관광개발 전공 강의실\n외식조리 전공 강의실\n12PC실\n\n- 5층 -\n복사기\n캔자판기\n커피자판기\n\n- 6층 -\n특성화관광 어학실습실\n\n- 7층 -\n본관 회의실\n본관 세미나실"
-            android:textSize="15sp"
-            android:gravity="center"
+            android:layout_width="280dp"
             android:background="@drawable/contents_info"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             // 취소 버튼.
             <TextView
                 android:id="@+id/cancelBtn"

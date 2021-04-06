@@ -19,7 +19,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RoomInfo_8 extends AppCompatActivity {
 
@@ -77,8 +76,9 @@ public class RoomInfo_8 extends AppCompatActivity {
                 // 각 리스트에 대한 층 수 값 저장.
                 String floor = ((RoomInfoItem)adapter.getItem(position)).getFloor();
 
-                Intent intent = new Intent(getApplicationContext(), RoomInfoPop_8.class);
+                Intent intent = new Intent(getApplicationContext(), RoomInfoPop.class);
                 intent.putExtra("floor", floor);
+                intent.putExtra( "lect",8);
                 startActivity(intent);
             }
         });
